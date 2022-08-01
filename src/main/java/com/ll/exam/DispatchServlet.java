@@ -98,13 +98,17 @@ public class DispatchServlet extends HttpServlet {
                     case "/usr/article/delete":
                         articleController.delete(rq);
                         break;
-
                 }
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+        doGet(req, resp);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
         doGet(req, resp);
     }
 }
